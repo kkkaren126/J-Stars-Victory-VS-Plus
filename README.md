@@ -8,4 +8,4 @@ Para baixar a versão jogável, veja o link abaixo:
 
 https://mega.nz/folder/gihEgK6T#WlRrNhJtUtbhbo2cZV8Q-w
 
-⚠️ Impotante: Nem todos os personagens foram testados na build Ikemon. Alguns podem apresentar erros.
+⚠️ Impotante: Nem todos os personagens foram testados na build Ikemen. Alguns podem apresentar erros.
