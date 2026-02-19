@@ -1,0 +1,870 @@
+﻿; Definition of fight screen
+
+; Motif: MUGEN1
+; Optimal resolution: 1280x720
+
+; Notes about fonts:
+;   - up to 10 fonts can be specified in the [Files] section.
+;   - fonts indexed here do not refer to the ones in system.def
+;   - fonts are search in directories in the following order:
+;     1. system directory
+;     2. mugen program directory (not recommended to keep custom fonts here)
+;     3. data/ (not recommended to keep custom fonts here)
+;     4. font/
+;
+; See the section "How to Customize" at the end of
+; this file.
+
+;-----------------------------------------------------------
+;Directories are checked in this order:
+;1. current directory fight.def is in
+;2. data/
+;3. your MUGEN directory
+
+[Files]
+sff = fight.sff
+snd = fight.snd
+font1 = robotoC32.def
+font2 = contM.def ;num48.def
+font3 = robotoC.def
+font4 = robotoC18.def
+fightfx.sff = fightfx.sff
+fightfx.air = fightfx.air
+common.snd = common.snd
+
+;-----------------------------------------------------------
+[FightFx]
+scale = 4
+
+;-----------------------------------------------------------
+[Lifebar]
+;Player 1
+p1.pos   = 577,19
+;p1.bg0.anim = 10
+;p1.bg0.offset = 0,0
+p1.bg1.anim = 11
+p1.bg1.layerno = 2
+p1.mid.anim = 12
+p1.mid.layerno = 1
+p1.front.spr = 13,0
+p1.front.layerno = 1
+p1.range.x  = 0,-480
+;Player 2
+p2.pos    = 703,19
+;p2.bg0.anim = 10
+;p2.bg0.facing = -1
+p2.bg1.anim = 11
+p2.bg1.facing = -1
+p2.bg1.layerno = 2
+p2.mid.anim = 12
+p2.mid.layerno = 1
+p2.mid.facing = -1
+p2.front.spr = 13,0
+p2.front.facing = -1
+p2.front.layerno = 1
+p2.range.x = 0,480
+
+[Begin Action 11] ;Darkened lifebar background 
+11,0, 0,0, 1, , AS192D160
+
+[Begin Action 12] ;Darkened lifebar background 
+13,0, 0,0, 1, , AS96D140
+
+[Simul Lifebar]
+;Player 1
+p1.pos   = 577,19
+;p1.bg0.anim = 10
+;p1.bg0.offset = 0,0
+p1.bg1.anim = 11
+p1.bg1.layerno = 2
+p1.mid.anim = 12
+p1.mid.layerno = 1
+p1.mid.scale = 1.05,0.45
+p1.front.spr = 13,0
+p1.front.layerno = 1
+p1.front.scale = 1.05,0.45
+p1.range.x  = 0,-479
+;Player 2
+p2.pos    = 703,19
+;p2.bg0.anim = 10
+;p2.bg0.facing = -1
+p2.bg1.anim = 11
+p2.bg1.facing = -1
+p2.bg1.layerno = 2
+p2.mid.anim = 12
+p2.mid.layerno = 1
+p2.mid.scale = 1.05,0.45
+p2.mid.facing = -1
+p2.front.spr = 13,0
+p2.front.facing = -1
+p2.front.layerno = 1
+p2.front.scale = 1.05,0.45
+p2.range.x = 0,479
+;Player 3
+p3.pos    = 577,35
+p2.mid.anim = 12
+p3.mid.layerno = 1
+p3.mid.scale = 1.0,0.45
+p3.front.spr = 13,0
+p3.front.scale = 1,0.45
+p3.front.layerno = 1
+p3.range.x  = 0,-479
+;Player 4
+p4.pos    = 703,35
+p2.mid.anim = 12
+p4.mid.layerno = 1
+p4.mid.scale = 1.0,0.45
+p2.mid.facing = -1
+p4.front.spr = 13,0
+p4.front.facing = -1
+p4.front.scale = 1,0.45
+p4.front.layerno = 1
+p4.range.x = 0,479
+
+[Begin Action 20] ;Darkened lifebar background (simul)
+20,0, 0,0, 1, , AS224D32
+
+[Turns Lifebar]
+;Player 1
+p1.pos   = 577,19
+;p1.bg0.anim = 10
+;p1.bg0.offset = 0,0
+p1.bg1.anim = 11
+p1.bg1.layerno = 2
+p1.mid.anim = 12
+p1.mid.layerno = 1
+p1.front.spr = 13,0
+p1.front.layerno = 1
+p1.range.x  = 0,-480
+;Player 2
+p2.pos    = 703,19
+;p2.bg0.anim = 10
+;p2.bg0.facing = -1
+p2.bg1.anim = 11
+p2.bg1.facing = -1
+p2.bg1.layerno = 2
+p2.mid.anim = 12
+p2.mid.layerno = 1
+p2.mid.facing = -1
+p2.front.spr = 13,0
+p2.front.facing = -1
+p2.front.layerno = 1
+p2.range.x = 0,480
+
+;-----------------------------------------------------------
+[Powerbar]
+;Player 1
+p1.pos    = 544,58
+;p1.bg0.anim = 40
+p1.bg0.offset = -6,4
+;p1.bg1.spr = 41,0
+;p1.mid.spr = 42,0
+p1.front.spr = 43,0
+p1.front.layerno = 1
+p1.range.x = 2,-198
+p1.counter.offset = 10,16
+p1.counter.font = 4,0, 0, 0,170,255
+p1.counter.layerno = 2
+
+;Player 2
+p2.pos    = 736,58
+;p2.bg0.anim = 40
+p2.bg0.facing = -1
+;p2.bg1.spr = 41,0
+;p2.bg1.facing = -1
+;p2.mid.spr = 42,0
+;p2.mid.facing = -1
+p2.front.spr = 43,0
+p2.front.facing = -1
+p2.front.layerno = 1
+p2.range.x  = 0,196
+p2.counter.offset = -9,16
+p2.counter.font = 4,0, 0, 0,170,255
+p2.counter.layerno = 2
+
+; --level sounds---
+level1.snd = 21,0
+level2.snd = 21,0
+level3.snd = 21,0
+
+[Begin Action 40] ;Darkened powerbar background 
+40,0, 0,0, 1, , AS224D32
+
+;-----------------------------------------------------------
+[Face]
+;Player 1
+p1.pos    = 7,7
+p1.bg0.anim = 50
+p1.bg0.layerno = 2
+p1.bg1.anim = 51
+p1.face.layerno = 2
+p1.face.spr = 9000,0
+p1.face.facing = 1
+p1.face.offset = 1,1
+p1.face.scale = 0.75,0.75
+;Player 2
+p2.pos    = 1273,7
+p2.bg0.anim = 50
+p2.bg0.layerno = 2
+p2.bg0.facing = -1
+p2.bg1.anim = 51
+p2.bg1.facing = -1
+p2.face.spr = 9000,0
+p2.face.layerno = 2
+p2.face.facing = -1
+p2.face.offset = -1,1
+p2.face.scale = 0.75,0.75
+
+[Begin Action 50]
+50,0, 0,0, 1, , AS128D128
+
+[Begin Action 52]
+50,1, 0,0, 1, , AS128D128
+
+[Begin Action 51] ;Darkened face background 
+51,0, 0,0, 1, , AS208D48
+
+[Simul Face]
+;Player 1
+p1.pos    = 7,7
+p1.bg0.anim = 52
+p1.bg0.layerno = 2
+p1.face.layerno = 2
+p1.face.spr = 9000,0
+p1.face.facing = 1
+p1.face.offset = -3,-2
+p1.face.scale = 0.43,0.43
+;Player 2
+p2.pos    = 1273,7
+p2.bg0.anim = 52
+p2.bg0.layerno = 2
+p2.bg0.facing = -1
+p2.face.spr = 9000,0
+p2.face.layerno = 2
+p2.face.facing = -1
+p2.face.offset = 3,-2
+p2.face.scale = 0.43,0.43
+;Player 3
+p3.pos    = 46,45
+p3.bg0.anim = 70
+p3.bg0.layerno = 2
+p3.face.spr = 9000,0
+p3.face.scale = 0.43,0.43
+p3.face.layerno = 2
+p3.face.facing = 1
+;Player 4
+p4.pos    = 1234,45
+p4.bg0.anim = 70
+p4.bg0.facing = -1
+p4.bg0.layerno = 2
+p4.face.spr = 9000,0
+p4.face.scale = 0.43,0.43
+p4.face.layerno = 2
+p4.face.facing = -1
+
+[Turns Face]
+;Player 1
+p1.pos    = 7,7
+p1.bg0.anim = 50
+p1.bg0.layerno = 2
+p1.face.layerno = 2
+p1.face.spr = 9000,0
+p1.face.facing = 1
+p1.face.offset = 1,1
+p1.face.scale = 0.75,0.75
+;Player 1's teammates
+p1.teammate.pos = 7,87
+p1.teammate.spacing = 40,0
+p1.teammate.bg0.anim = 71
+p1.teammate.bg0.layerno = 2
+p1.teammate.ko.anim = 72
+p1.teammate.ko.layerno = 2
+p1.teammate.face.spr = 9000,0
+p1.teammate.face.layerno = 2
+p1.teammate.face.scale = 0.37,0.37
+p1.teammate.face.offset = 1,1
+p1.teammate.face.facing = 1
+;Player 2
+p2.pos    = 1273,7
+p2.bg0.anim = 50
+p2.bg0.layerno = 2
+p2.bg0.facing = -1
+p2.face.spr = 9000,0
+p2.face.layerno = 2
+p2.face.facing = -1
+p2.face.offset = -1,1
+p2.face.scale = 0.75,0.75
+;Player 2's teammates
+p2.teammate.pos = 1273,87
+p2.teammate.spacing = -40,0
+p2.teammate.bg0.anim = 71
+p2.teammate.bg0.layerno = 2
+p2.teammate.bg0.facing = -1
+p2.teammate.ko.anim = 72
+p2.teammate.ko.facing = -1
+p2.teammate.ko.layerno = 2
+p2.teammate.face.spr = 9000,0
+p2.teammate.face.layerno = 2
+p2.teammate.face.scale = 0.37,0.37
+p2.teammate.face.facing = -1
+p2.teammate.face.offset = -1,1
+
+[Begin Action 71] ;Darkened small face background 
+70,0, 0,0, 1, , AS128D128
+
+[Begin Action 72] ;KO overlay for small face
+70,0, 0,0, 1, , AS128D128
+
+;-----------------------------------------------------------
+[Name]
+p1.pos = 95,70
+;p1.bg. =
+p1.name.font = 3,3, 1
+p1.name.layerno = 2
+;p2.bg. =
+p2.pos = 1185,70
+p2.name.font = 3,1, -1
+p2.name.layerno = 2
+
+[Simul Name]
+p1.pos = 95,70
+;p1.bg. =
+p1.name.font = 3,3, 1
+p1.name.layerno = 2
+p2.pos = 1185,70
+p2.name.font = 3,1, -1
+p2.name.layerno = 2
+p3.pos = 95,90
+p3.name.font = 3,3, 1
+p3.name.layerno = 2
+p4.pos = 1185,90
+p4.name.font = 3,1, -1
+p4.name.layerno = 2
+
+[Turns Name]
+p1.pos = 95,70
+;p1.bg. =
+p1.name.font = 3,3, 1
+p1.name.layerno = 2
+;p2.bg. =
+p2.pos = 1185,70
+p2.name.font = 3,1, -1
+p2.name.layerno = 2
+
+;-----------------------------------------------------------
+[Time]
+pos = 640,0
+; Uncomment the following line to use a bg component
+bg.anim = 30
+bg.pos = 640,0
+bg.layerno = 2
+; Time count display
+counter.offset = 0,65
+counter.font = 2,0, 0, 255,255,255
+counter.layerno = 2
+; Ticks for each count
+framespercount = 60
+
+;transparent counter
+[Begin Action 30]
+30,0, 0,0, 1, , AS256D256
+
+;-----------------------------------------------------------
+[Combo]
+team1.pos = 30,260        ;Coords to show
+team1.start.x = -240      ;Starting x-coords
+team1.counter.font = 2,3,1, 0,240,170
+team1.counter.shake = 1   ;Set to 1 to shake count on hit
+team1.text.spr = 60,0 ;You can use %i to show count in the text, eg "%i Hit!"
+team1.text.offset = -120,7   ;Offset of text
+team1.displaytime = 90    ;Time to show text
+team2.pos = 1180,260      ;Coords to show
+team2.start.x = 1520      ;Starting x-coords
+team2.counter.font = 2,3,1, 0,240,170
+team2.counter.shake = 1   ;Set to 1 to shake count on hit
+team2.text.spr = 60,1 ;You can use %i to show count in the text, eg "%i Hit!"
+team2.text.offset = 120,7  ;Offset of text
+team2.displaytime = 90    ;Time to show text
+
+;-----------------------------------------------------------
+[Round]
+match.wins = 1              ;Rounds needed to win a match
+match.maxdrawgames = 1      ;Max number of drawgames allowed (-1 for infinite)
+start.waittime = 30         ;Time to wait before starting intro
+
+; Default position for all components
+pos = 0,0
+
+; ROUND X
+round.time = 0              ;Time to show round display
+round.default.offset = 640, 320
+; Default component to show for each round. Text can include a %i to
+; the round number. Use "round.default.anim" for animation instead of
+; text.
+;round.default.font = 1,0, 0
+;round.default.anim = 290
+;round.default.displaytime = 60
+;round.default.scale = 1,1
+; Sounds to play for each round (optional, specify up to round 9)
+round1.snd = 0,1
+round2.snd = 0,1
+round3.snd = 0,1
+round4.snd = 0,1
+round5.snd = 0,1
+round6.snd = 0,1
+round7.snd = 0,1
+round8.snd = 0,1
+round9.snd = 0,1
+round.sndtime = 0           ;Time to play the sounds
+; Components to show for each round (optional, specify up to round 9)
+; Uncomment to use
+round1.offset = 640,300
+round1.anim = 230
+
+round2.offset = 640,300
+round2.anim = 240
+
+round3.offset = 640,300
+round3.anim = 250
+
+round4.offset = 640,300
+round4.anim = 260
+
+round5.offset = 640,300
+round5.anim = 270
+
+round6.offset = 640,300
+round6.anim = 280
+
+round7.offset = 640,300
+round7.anim = 290
+
+; FIGHT
+fight.time = 0              ;Time to show FIGHT component
+fight.offset = 640, 300     ;Component for FIGHT display
+fight.anim = 80             ;.
+fight.snd = 0,1             ;Sound to play
+fight.sndtime = 0           ;Time to play sound
+
+ctrl.time = 30              ;Time players get control after "Fight"
+
+; KO
+KO.time    = 0              ;Time to show KO component
+KO.offset  = 640,360	       ;Component for KO display
+KO.anim    = 210            ;.
+KO.snd     = 2,0            ;Sound to play for KO announcement
+; Double KO
+DKO.offset = 640, 360
+;DKO.font   = 1,5
+;DKO.text   = "Double K.O."
+;DKO.displaytime = 60
+DKO.anim = 300
+DKO.snd    = 2,0
+; Time Over
+TO.offset  = 640, 360
+;TO.font    = 1,5
+;TO.text    = "Time Over"
+;TO.displaytime = 60
+TO.anim = 310
+TO.snd     = 2,0
+
+KO.sndtime = 0             ;Time to play sound for KO, DKO and TO.
+slow.time  = 30         ;Time for KO slowdown (in ticks)
+over.waittime = 75        ;Time to wait after KO before player control is stopped
+over.hittime = 75          ;Time after KO that players can still damage each other (for double KO)
+over.wintime = 45          ;Time to wait before players change to win states
+over.time = 210            ;Time to wait before round ends
+; Time to wait before showing win/draw message
+win.time = 60
+; Win text
+win.offset = 640, 320
+win.anim = 220
+;win.font = 1,0
+;win.text = "%s Wins"
+win.displaytime = 540
+; 2-player win text
+win2.offset = 640, 320
+win2.anim = 220
+;win2.font = 1,0
+;win2.text = "%s and %s Win"
+win2.displaytime = 540
+; Draw text
+draw.offset = 640, 320
+draw.anim = 320
+;draw.font = 1,0
+;draw.text = "Draw Game"
+;draw.displaytime = 540
+
+;"Fight!" Animation
+[Begin Action 80]
+80,0, 0,0, 5, , AS256D256
+80,1, 0,0, 20, 
+80,2, 0,0, 5, , AS128D128
+80,3, 0,0, 3, , AS32D192
+
+;"K.O." Animation
+[Begin Action 200]
+-1,-1, 0,0, 5
+200,0, 0,0, 1, , AS255D255
+200,0, 0,0, 1, , AS255D224
+200,0, 0,0, 1, , AS255D192
+200,0, 0,0, 1, , AS255D160
+200,0, 0,0, 1, , AS255D128
+200,0, 0,0, 120
+200,0, 0,0, 1, , AS255D64
+200,0, 0,0, 1, , AS255D128
+200,0, 0,0, 1, , AS255D192
+200,0, 0,0, 1, , AS255D255
+200,0, 0,0, 1, , AS192D255
+200,0, 0,0, 1, , AS128D255
+200,0, 0,0, 1, , AS64D255
+
+[Begin Action 210]
+210,1,0,0, 2,, AS256D128
+-1,-1,0,0, 5
+210,1,0,0, 2,, AS256D128
+-1,-1,0,0, 5
+210,1,0,0, 2,, AS256D128
+-1,-1,0,0, 5
+210,1,0,0, 2,, AS256D128
+-1,-1,0,0, 5
+210,1,0,0, 2,, AS256D128
+-1,-1,0,0, 5
+210,1,0,0, 2,, AS256D128
+-1,-1,0,0, 5
+210,1,0,0, 2,, AS256D128
+-1,-1,0,0, 5
+210,1,0,0, 2,, AS256D128
+-1,-1,0,0, 5
+
+200,0, 0,-150, 1, , AS255D255
+200,1, 0,-150, 1, , AS255D224
+200,2, 0,-150, 1, , AS255D192
+200,3, 0,-150, 1, , AS255D160
+200,4, 0,-150, 1, , AS255D128
+200,4, 0,-150, 54 
+200,4, 0,-150, 1, , AS255D64
+200,4, 0,-150, 1, , AS255D128
+200,4, 0,-150, 1, , AS255D192
+200,4, 0,-150, 1, , AS255D255
+200,4, 0,-150, 1, , AS192D255
+200,4, 0,-150, 1, , AS128D255
+200,4, 0,-150, 1, , AS64D255
+
+[Begin Action 220]
+220,0, 0,0, 2, , AS64D192
+220,1, 0,0, 2, , AS128D128
+220,2, 0,0, 2, , AS160D192
+220,3, 0,0, 240,
+
+[Begin Action 230]
+230,0, 0,0, 5, , AS64D192
+230,1, 0,0, 30, 
+230,2, 0,0, 5, , AS96D160
+230,3, 0,0, 5, , AS16D224 
+
+[Begin Action 240]
+240,0, 0,0, 5, , AS64D192
+240,1, 0,0, 30, 
+240,2, 0,0, 5, , AS96D160
+240,3, 0,0, 5, , AS16D224 
+
+[Begin Action 250]
+250,0, 0,0, 5, , AS64D192
+250,1, 0,0, 30, 
+250,2, 0,0, 5, , AS96D160
+250,3, 0,0, 5, , AS16D224 
+
+[Begin Action 260]
+260,0, 0,0, 5, , AS64D192
+260,1, 0,0, 30, 
+260,2, 0,0, 5, , AS96D160
+260,3, 0,0, 5, , AS16D224 
+
+[Begin Action 270]
+270,0, 0,0, 5, , AS64D192
+270,1, 0,0, 30, 
+270,2, 0,0, 5, , AS96D160
+270,3, 0,0, 5, , AS16D224 
+
+[Begin Action 280]
+280,0, 0,0, 5, , AS64D192
+280,1, 0,0, 30, 
+20,2, 0,0, 5, , AS96D160
+280,3, 0,0, 5, , AS16D224 
+
+[Begin Action 290]
+290,0, 0,0, 5, , AS64D192
+290,1, 0,0, 30, 
+290,2, 0,0, 5, , AS96D160
+290,3, 0,0, 5, , AS16D224 
+
+[Begin Action 300]
+210,1,0,0, 2,, AS256D128
+-1,-1,0,0, 5
+210,1,0,0, 2,, AS256D128
+-1,-1,0,0, 5
+210,1,0,0, 2,, AS256D128
+-1,-1,0,0, 5
+210,1,0,0, 2,, AS256D128
+-1,-1,0,0, 5
+210,1,0,0, 2,, AS256D128
+-1,-1,0,0, 5
+210,1,0,0, 2,, AS256D128
+-1,-1,0,0, 5
+210,1,0,0, 2,, AS256D128
+-1,-1,0,0, 5
+210,1,0,0, 2,, AS256D128
+-1,-1,0,0, 5
+
+300,0, 0,-150, 1, , AS255D255
+300,1, 0,-150, 1, , AS255D224
+300,2, 0,-150, 1, , AS255D192
+300,3, 0,-150, 1, , AS255D160
+300,4, 0,-150, 1, , AS255D128
+300,4, 0,-150, 54 
+300,4, 0,-150, 1, , AS255D64
+300,4, 0,-150, 1, , AS255D128
+300,4, 0,-150, 1, , AS255D192
+300,4, 0,-150, 1, , AS255D255
+300,4, 0,-150, 1, , AS192D255
+300,4, 0,-150, 1, , AS128D255
+300,4, 0,-150, 1, , AS64D255
+
+[Begin Action 310]
+310,0, 0,-150, 1, , AS255D255
+310,1, 0,-150, 1, , AS255D224
+310,2, 0,-150, 1, , AS255D192
+310,3, 0,-150, 1, , AS255D160
+310,4, 0,-150, 1, , AS255D128
+310,4, 0,-150, 54 
+310,4, 0,-150, 1, , AS255D64
+310,4, 0,-150, 1, , AS255D128
+310,4, 0,-150, 1, , AS255D192
+310,4, 0,-150, 1, , AS255D255
+310,4, 0,-150, 1, , AS192D255
+310,4, 0,-150, 1, , AS128D255
+310,4, 0,-150, 1, , AS64D255
+
+[Begin Action 320]
+320,0, 0,0, 2, , AS64D192
+320,1, 0,0, 2, , AS128D128
+320,2, 0,0, 2, , AS160D192
+320,3, 0,0, 240,
+;-----------------------------------------------------------
+[WinIcon]
+p1.pos = 564,10
+p2.pos = 715,10
+; Background icon
+p1.bg0.spr = 120,0
+p2.bg0.spr = 120,0
+; Offset for next icon (x,y)
+p1.iconoffset = -16,0  
+p2.iconoffset = 16,0
+; Counter text font and offset for representing wins
+p1.counter.layerno = 2
+p1.counter.offset = 0,5
+p1.counter.font = 4,0,0, 96,255,64
+p2.counter.layerno = 2
+p2.counter.offset = 0,5
+p2.counter.font = 4,0,0, 96,255,64
+; Win by normal
+p1.n.spr = 100,0
+p2.n.spr = 100,0
+p1.n.layerno = 2
+p2.n.layerno = 2
+; Win by special
+p1.s.spr = 100,0
+p2.s.spr = 100,0
+p1.s.layerno = 2
+p2.s.layerno = 2
+; Win by hyper (super)
+p1.h.spr = 100,0
+p2.h.spr = 100,0
+p1.h.layerno = 2
+p2.h.layerno = 2
+; Win by normal throw
+p1.throw.spr = 100,0
+p2.throw.spr = 100,0
+p1.throw.layerno = 2
+p2.throw.layerno = 2
+; Win by cheese
+p1.c.spr = 100,0
+p2.c.spr = 100,0
+p1.c.layerno = 2
+p2.c.layerno = 2
+; Win by time over
+p1.t.spr = 100,0
+p2.t.spr = 100,0
+p1.t.layerno = 2
+p2.t.layerno = 2
+; Win by suicide
+p1.suicide.spr = 100,0
+p2.suicide.spr = 100,0
+p1.suicide.layerno = 2
+p2.suicide.layerno = 2
+; Opponent beaten by his own teammate
+p1.teammate.spr = 100,0
+p2.teammate.spr = 100,0
+p1.teammate.layerno = 2
+p2.teammate.layerno = 2
+; Win by perfect (overlay icon)
+p1.perfect.spr = 110,0
+p2.perfect.spr = 110,0
+p1.perfect.layerno = 2
+p2.perfect.layerno = 2
+; Use icons up until this number of wins
+useiconupto = 12
+
+
+;-----------------------------------------------------------
+; How to customize
+;-----------------------------------------------------------
+; First of all, set filenames under [Files].
+; 
+; Next, you can customize each component of the fight screen.
+; A component can be anything from a piece of the lifebar,
+; to the text that signals a K.O.
+;
+; Each component starts with its name, followed by a period,
+; and then the names of its elements. For example, a
+; component named "bg" with an element of "anim" looks
+; like "bg.anim".
+;
+; There are several main element types:
+;   1. anim (animation)
+;   2. spr  (sprite)
+;   3. font (text)
+;   4. snd  (sound)
+; 
+; 1. anim
+;    Format: anim = actionno
+;    actionno is the number of the action to use. You must
+;    specify a valid action that is defined within this file.
+;    The sprites for the animation come from the file given
+;    for the "sff" parameter in the [Files] group below.
+;    You can define your animation actions anywhere in this
+;    file, as long as it does not come in the middle of a
+;    group (an example of a group is the block of text
+;    starting with [Files], and ending on the next group
+;    [Lifebar]).
+;    For example, to use action 5 for the p1.bg0 component:
+;      p1.bg0.anim = 5
+;
+; 2. spr
+;    Format: spr = spritegrp, spriteno
+;    This is the identifier pair for the sprite you to
+;    display.
+;    For example, to show sprite 103,0 for a component named
+;    p1.throw:
+;      p1.throw.spr = 103,0
+;
+; 3. font
+;    Format: font = fontno, fontbank, alignmnt, R, G, B
+;            text = text
+;    This lets you set the font (and optionally the content
+;    text). fontno is the number of the font defined under
+;    [Files]. For instance, for the line "font2 = font/num1.fnt",
+;    the fontno is 2.
+;    fontbank is the color bank of the font to use. Refer to
+;    the font for what color banks it has.
+;    alignmt is a number representing the text alignment.
+;    1 is left, 0 means center, and -1 is for right-alignment.
+;    R, G, B are the color adjustment values for the font.
+;    RGB values default to 256,256,256 (no color adjustment).
+;    All font values are optional.  If fontno is omitted, no
+;    text will be drawn.
+;
+;    The "text" element should accompany the "font" element
+;    wherever necessary. The following example will display
+;    "FIGHT!" using font 1, bank 1, with center-alignment.
+;      fight.font = 1,1, 0
+;      fight.text = FIGHT!
+;
+; 4. snd
+;    Format: snd = sndgrp, sndno
+;    This is the identifier pair for the sound effect to
+;    play. The .snd file that the sound is played from
+;    is given in the "snd" parameter in the [Files] group.
+;    This plays sound 21,0 for the "level1" component.
+;      level1.snd = 21,0
+; 
+; Take note that the anim, spr and font element types are
+; mutually exclusive; you can only use one of them per
+; component.
+;
+; The types of elements supported vary with the component.
+; Usually the anim, spr and font elements are interchangeable
+; for a component. However, in some cases only one element
+; type may be used. An example of this is found under [Combo]:
+;   counter.font = 2,4  ;Font for combo counter
+; You cannot use an animation or a sprite to represent a
+; numeric counter, so it only makes sense to define a font
+; for use.
+;
+; There are other element types that do nothing on their
+; own. They can be used with display element types
+; (spr, anim and font) to gain more control. These
+; have no meaning when used with the snd element.
+;   5.  offset
+;   6.  displaytime
+;   7.  facing
+;   8.  vfacing
+;   9.  layerno
+;   10. scale
+;
+; 5. offset
+;   Format: offset = x, y
+;   Displaces the display element horizontally by x pixels,
+;   and vertically by y pixels.
+;   If this element is omitted, the offset is assumed to
+;   be 0,0.
+;
+; 6. displaytime
+;   Format: displaytime = time_in_ticks
+;   This element defines the time to display the component.
+;   If omitted, the default display time varies with element
+;   type. For spr and font elements, the default displaytime
+;   is 1. For anim, it is the looptime of the animation.
+;   This example displays the text "FIGHT!" for 45 game
+;   ticks:
+;     fight.font = 1,1, 0
+;     fight.text = FIGHT!
+;     fight.displaytime = 45
+;
+; 7. facing
+;   Format: facing = dir
+;   Sets the horizontal flipping of the display element.
+;   1 means no flipping, and -1 means flip horizontally.
+;   Does not affect "font" elements. Defaults to 1 if
+;   omitted.
+;
+; 8. vfacing
+;   Format: vfacing = dir
+;   Sets the vertical flipping of the display element.
+;   1 means no flipping, and -1 means flip vertically.
+;   Does not affect "font" elements. Defaults to 1 if
+;   omitted.
+;
+; 9. layerno
+;   Format: layerno = no
+;   This element lets you set the layer to which the
+;   display element will be drawn on. 0 is in front of
+;   the background, but behind the players. 1 is in
+;   front of the players, but behind the foreground.
+;   2 is in front of the foreground. The default is 0
+;   in most cases.
+;   An example of where this might be useful is when
+;   you want to have the life or power bars appear
+;   on top. In that case, set all the components to
+;   have layerno = 2.
+;
+; 10. scale
+;   Format: scale = xscale, yscale
+;   Scales the display element by a horizontal scale
+;   factor of xscale, and vertically by a factor of
+;   yscale. Defaults to 1,1 if omitted.
+;   Currently does not affect "font" elements.
+;
+; Some components have additional elements specific
+; to themselves.

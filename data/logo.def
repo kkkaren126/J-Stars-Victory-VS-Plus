@@ -1,0 +1,110 @@
+;==============================================================
+; DRAGON BALL Z MUGEN BUDOKAI Screenpack by Hloader
+;==============================================================
+
+[Info]
+name = "Dragon Ball Z Mugen Budokai"
+author = "Hloader"
+versiondate = 05-25-2014
+mugenversion = 1.1 BETA 1
+localcoord = 1280,720
+
+;==============================================================
+
+[SceneDef]
+spr = logo.sff
+startscene = 0
+
+;==============================================================
+
+[Scene 0]
+fadein.time = 50
+fadeout.time = 50
+end.time = 300
+bg.name = BG0
+
+[BG0Def]
+
+[BG0 Bandai Games]
+type = normal
+spriteno = 0,0
+start = -640,0
+
+;==============================================================
+
+[Scene 1]
+fadein.time = 50
+fadeout.time = 50
+end.time = 300
+bg.name = BG1
+
+[BG1Def]
+
+[BG1 Bandai]
+type = normal
+spriteno = 0,1
+start = -640,0
+
+;==============================================================
+
+[Scene 2]
+fadein.time = 50
+fadeout.time = 50
+end.time = 300
+bg.name = BG2
+
+[BG2Def]
+
+[BG2 Dimps]
+type = normal
+spriteno = 0,2
+start = -640,0
+
+;==============================================================
+
+[Scene 3]
+fadein.time = 50
+fadeout.time = 50
+end.time = 300
+bg.name = BG3
+
+[BG3Def]
+
+[BG3 Criware]
+type = normal
+spriteno = 0,3
+start = -640,0
+
+;==============================================================
+
+[Scene 4]
+fadein.time = 50
+fadeout.time = 50
+end.time = 300
+bg.name = BG4
+
+[BG4Def]
+
+[BG4 Elecbyte]
+type = normal
+spriteno = 0,4
+start = -640,0
+
+;==============================================================
+
+[Scene 5]
+fadein.time = 50
+fadeout.time = 80
+end.time = 500
+bg.name = BG5
+
+[BG5Def]
+
+[BG5 Hloader]
+type = normal
+spriteno = 0,5
+start = -640,0
+
+;==============================================================
+; http://www.hloader.xpg.com.br
+;==============================================================
