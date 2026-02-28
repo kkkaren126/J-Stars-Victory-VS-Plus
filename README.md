@@ -8,6 +8,6 @@ Personagens, músicas e outros conteúdos pertencem a seus respectivos autores e
 
 Para baixar a versão jogável, veja o link abaixo:
 
-👉 https://mega.nz/folder/gihEgK6T#WlRrNhJtUtbhbo2cZV8Q-w
+👉 https://mega.nz/folder/JTACmCBT#ujGQVwhx0tGigZyQo3uONg
 
 ⚠️ Impotante: Apesar da build Ikemen ser mais estável que a build MUGEN, nem todos os personagens foram testados nesta versão. Esteja ciente que alguns podem apresentar erros.
